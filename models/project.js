@@ -15,7 +15,7 @@ var projectSchema = new mongoose.Schema({
   timestamps: true
 });
 
-reviewSchema.pre('save', function(next){
+projectSchema.pre('save', function(next){
   now = new Date();
   this.updated_at = now;
   if ( !this.created_at ) {
@@ -24,5 +24,5 @@ reviewSchema.pre('save', function(next){
   next();
 });
 
-var Project = mongoose.model('Project', reviewSchema);
+var Project = mongoose.model('Project', projectSchema);
 module.exports = Project;

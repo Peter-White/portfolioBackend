@@ -7,8 +7,9 @@ var bodyParser = require('body-parser');
 var Project = require('./models/project');
 var mongoose = require('mongoose');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 // var users = require('./routes/users');
+var projects = require('./routes/projects');
 
 var app = express();
 
@@ -39,7 +40,7 @@ app.use(function(req, res, next) {
 var uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/first_impressions';
+  'mongodb://localhost/portfolioBackend';
 
 mongoose.connect(uristring, function (err, res) {
   if (err) {

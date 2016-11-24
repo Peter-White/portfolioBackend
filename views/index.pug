@@ -2,4 +2,28 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title} Bitch
+  form(action='/projects', method='post')
+          h3 Title
+          input(type='text' name='title')
+          h3 Image
+          input(type='text' name='image')
+          h3 Content
+          textarea(type='text', name='content', rows='4', cols='50', placeholder="Enter review here")
+          h3 Technologies Used
+          input(type='text' name='technologies')
+          h3 Url
+          input(type='text' name='url')
+          h3 Github
+          input(type='text' name='github')
+          h3 Desktop
+          select(name='desktop')
+            option(value=true) True
+            option(value=false) False
+          h3 Mobile
+          select(name='mobile')
+            option(value=true) True
+            option(value=false) False
+          br
+          br
+          br
+          input(type='submit', value='Submit')
