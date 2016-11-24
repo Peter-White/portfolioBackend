@@ -11,7 +11,6 @@ $(document).ready(function() {
       projectHTML += '<ul type="none" id="' + project._id + '">';
       projectHTML += '<li><h2 id="title">' + project.title + '</h2></li>';
       projectHTML += '<li><img id="image" src="' + project.image + '" height="300px"></li>';
-      projectHTML += '<li><a id="url" href="' + project.url + '">' + project.url + '</a></li>';
       projectHTML += '</ul>';
       projectHTML += '<br>';
     });
