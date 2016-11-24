@@ -21,7 +21,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-
+  // This is how you interact with a generated element
   $(document).on('click', '.projectContainer ul' , function(event){
     var listId = $(this).attr("id");
     alert(listId);
