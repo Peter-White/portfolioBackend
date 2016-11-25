@@ -15,21 +15,36 @@ $(document).ready(function() {
       projectHTML += '<br>';
     });
     projectHTML += '</div>';
-    $('body').append(projectHTML);
+    $('.projectList').html(projectHTML);
   };
   $.getJSON(projectAPI, projectOptions, displayProjects);
 });
 
 $(document).ready(function() {
   // This is how you interact with a generated element
-  $(document).on('click', '.projectContainer ul' , function(event){
-    var listId = $(this).attr("id");
-    alert(listId);
+  $('.projectList').on('click', '.projectContainer ul' , function(event){
+    // Assign a variable to "this" before using it in an ajax request
+    var $this = $(this);
+    var listId = $this.attr("id");
+
+    var projectAPI = "/projects/" + listId;
+    var projectOptions = {
+      format: "json",
+    };
+
+    function displayProjects(data) {
+      var projectHTML = '';
+      $.each(data, function(i, project) {
+        projectHTML += '<li><p id="summary">' + project.summary + '</p></li>';
+        // projectHTML += '<li><p id="technologies">' + project.technologies + '</p></li>';
+        // projectHTML += '<li><a href="' + project.url + '" id="url">' + project.url + '</a></li>';
+        // projectHTML += '<li><a href="' + project.github + '" id="github">' + project.github + '</a></li>';
+        // projectHTML += '<li><h2 id="desktop">' + project.desktop + '</h2></li>';
+        // projectHTML += '<li><h2 id="mobile">' + project.mobile + '</h2></li>';
+      });
+      $this.append(projectHTML);
+    };
+    $.getJSON(projectAPI, projectOptions, displayProjects);
   });
 });
-// projectHTML += '<li><p id="summary">' + project.summary + '</p></li>';
-// projectHTML += '<li><p id="technologies">' + project.technologies + '</p></li>';
-// projectHTML += '<li><a href="' + project.url + '" id="url">' + project.url + '</a></li>';
-// projectHTML += '<li><a href="' + project.github + '" id="github">' + project.github + '</a></li>';
-// projectHTML += '<li><h2 id="desktop">' + project.desktop + '</h2></li>';
-// projectHTML += '<li><h2 id="mobile">' + project.mobile + '</h2></li>';
+
