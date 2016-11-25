@@ -38,12 +38,10 @@ app.use(function(req, res, next) {
 
 // mongoose
 var uristring =
-  process.env.MONGOLAB_URI;
-
-  // ||
-  // process.env.MONGOHQ_URL ||
-  // process.env.MONGOLAB_URI ||
-  // 'mongodb://localhost/portfolioBackend'
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  process.env.MONGOLAB_URI ||
+  'mongodb://localhost/portfolioBackend';
 
 mongoose.connect(uristring, function (err, res) {
   if (err) {
