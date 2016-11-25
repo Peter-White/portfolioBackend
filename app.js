@@ -37,6 +37,9 @@ app.use(function(req, res, next) {
 });
 
 // mongoose
+
+var MONGODB_URI = "mongodb://heroku_lh5rpv26:pjghv3radsqast6tllh9fa98ku@ds163377.mlab.com:63377/heroku_lh5rpv26";
+
 var uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
