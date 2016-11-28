@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+input {
+  width: 50%;
+  font-size: 16px;
+}
+textarea {
+  width: 50%;
+  font-size: 12px;
+}
