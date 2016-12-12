@@ -6,29 +6,81 @@ block content
   h1= title
   form(action='/projects', method='post')
           h3 Title
-          input(type='text' name='title')
+          input(type='text', name='title')
           h3 Image
-          input(type='text' name='image')
+          input(type='text', name='image')
           h3 Summary
           textarea(type='text', name='summary', rows='4', cols='50', placeholder="Enter summary here")
           h3 Technologies Used
-          input(type='text' name='technologies')
+          table
+            tr
+             td
+              label(for="checkbox") Javascript
+              input(type='checkbox', name='technologies', value="Javascript")
+             td
+              label(for="checkbox") Ruby
+              input(type='checkbox', name='technologies', value="Ruby")
+             td
+              label(for="checkbox") HTML
+              input(type='checkbox', name='technologies', value="HTML")
+             td
+              label(for="checkbox") HTML5
+              input(type='checkbox', name='technologies', value="HTML5")
+             td
+              label(for="checkbox") CSS
+              input(type='checkbox', name='technologies', value="CSS")
+            tr
+             td
+              label(for="checkbox") CSS3
+              input(type='checkbox', name='technologies', value="CSS3")
+             td
+              label(for="checkbox") NodeJS
+              input(type='checkbox', name='technologies', value="NodeJS")
+             td
+              label(for="checkbox") ExpressJS
+              input(type='checkbox', name='technologies', value="ExpressJS")
+             td
+              label(for="checkbox") AngularJS
+              input(type='checkbox', name='technologies', value="AngularJS")
+             td
+              label(for="checkbox") Ruby on Rails
+              input(type='checkbox', name='technologies', value="Ruby on Rails")
+            tr
+             td
+              label(for="checkbox") MongoDB
+              input(type='checkbox', name='technologies', value="MongoDB")
+             td
+              label(for="checkbox") SQL
+              input(type='checkbox', name='technologies', value="SQL")
+             td
+              label(for="checkbox") Postgresql
+              input(type='checkbox', name='technologies', value="Postgresql")
+             td
+              label(for="checkbox") jQuery
+              input(type='checkbox', name='technologies', value="jQuery")
+             td
+              label(for="checkbox") Ajax
+              input(type='checkbox', name='technologies', value="Ajax")
+            tr
+             td
+              label(for="checkbox") Bootstrap
+              input(type='checkbox', name='technologies', value="Bootstrap")
           h3 Url
-          input(type='text' name='url')
+          input(type='text', name='url')
           h3 Github
-          input(type='text' name='github')
+          input(type='text', name='github')
           h3 Desktop
-          select(name='desktop')
-            option(value=false) True
-            option(value=true) False
+          select(name='desktop', class='desktop')
+            option(value="true") True
+            option(value="false") False
           h3 Mobile
-          select(name='mobile')
-            option(value=false) True
-            option(value=true) False
+          select(name='mobile', class='mobile')
+            option(value="true") True
+            option(value="false") False
           br
           br
           br
-          input(type='submit', value='Submit')
+          input(type='submit', value='Submit', class="submit")
   .projectList
   //- Test append div
   .extraInfo
